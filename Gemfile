@@ -2,8 +2,13 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.1.12'
 
+ruby "1.9.3"
+#ruby-gemset=juvia
+
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
+
+gem 'dotenv-rails'
 
 gem 'schema_plus'
 gem 'default_value_for'
@@ -59,12 +64,12 @@ group :mysql do
   gem 'mysql2', :require => false
 end
 
-group :postgres do
-  # adapter: postgresql
-  gem 'pg', :require => false
-end
-
 group :sqlite do
   # adapter: sqlite3
   gem 'sqlite3', :require => false
+end
+
+group :production do
+  gem 'foreman'
+  gem 'thin'
 end
