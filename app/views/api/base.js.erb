@@ -102,7 +102,7 @@ if (!Juvia) {
 	}
 	
 	Juvia.loadScript = function(path, options) {
-		var url = '<%= escape_javascript(request.protocol + request.host_with_port) %>';
+		var url = '<%= escape_javascript("//" + request.host_with_port) %>';
 		url += path;
 		
 		if (this.supportsCors) {
